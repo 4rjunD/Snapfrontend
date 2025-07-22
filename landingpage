@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono - AI-Powered Assignment Grading Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e2938;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e2938;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: #1e2938;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+        
+        .btn-primary {
+            background-color: #1e2938;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: #374151;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #1e2938;
+            padding: 12px 24px;
+            border: 2px solid #1e2938;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1e2938;
+            color: white;
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #4b5563;
+        }
+        
+        .hero-cta {
+            margin-bottom: 80px;
+        }
+        
+        .dashboard-mockup {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 800px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .dashboard-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .assignment-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .assignment-item:last-child {
+            border-bottom: none;
+        }
+        
+        .grade-badge {
+            background-color: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .how-it-works {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: #1e2938;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+        
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .step p {
+            font-size: 16px;
+            color: #4b5563;
+        }
+        
+        .features {
+            padding: 100px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature {
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        
+        .feature:hover {
+            border-color: #1e2938;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            color: #4b5563;
+            font-size: 16px;
+        }
+        
+        .audience {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .audience-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .audience-card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .testimonials {
+            padding: 100px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .testimonial {
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .testimonial-quote {
+            font-size: 18px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #1e2938;
+        }
+        
+        .testimonial-role {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .final-cta {
+            padding: 100px 0;
+            background-color: #1e2938;
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .btn-white {
+            background-color: white;
+            color: #1e2938;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .dashboard-mockup {
+                padding: 20px;
+            }
+            
+            .steps {
+                gap: 40px;
+            }
+            
+            .final-cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Chrono</a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#demo" class="btn-primary">Book a Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI-Powered Grading That Saves Teachers Hours Every Week</h1>
+                <p>Chrono uses advanced AI to grade essays, problem sets, and assignments with precision, giving teachers more time to focus on what matters most: teaching.</p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn-primary" style="margin-right: 16px;">Book a Demo</a>
+                    <a href="#how-it-works" class="btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="dashboard-mockup">
+                    <div class="dashboard-content">
+                        <div class="dashboard-header">
+                            <h3>Recent Assignments</h3>
+                            <span style="color: #10b981; font-weight: 600;">98% Accuracy Rate</span>
+                        </div>
+                        <div class="assignment-item">
+                            <div>
+                                <strong>English Essay: Climate Change</strong>
+                                <div style="font-size: 14px; color: #6b7280;">25 submissions • Graded in 3 minutes</div>
+                            </div>
+                            <div class="grade-badge">A-</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div>
+                                <strong>Math Problem Set: Calculus</strong>
+                                <div style="font-size: 14px; color: #6b7280;">32 submissions • Graded in 2 minutes</div>
+                            </div>
+                            <div class="grade-badge">B+</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div>
+                                <strong>History Research Paper</strong>
+                                <div style="font-size: 14px; color: #6b7280;">18 submissions • Graded in 5 minutes</div>
+                            </div>
+                            <div class="grade-badge">A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How Chrono Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Assignments</h3>
+                        <p>Simply upload student assignments in any format. Chrono supports essays, problem sets, code submissions, and more.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Grades Instantly</h3>
+                        <p>Our advanced AI analyzes each submission against your custom rubrics and criteria, providing detailed feedback and scores.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Teacher Reviews</h3>
+                        <p>Review AI suggestions, make adjustments, and add personal feedback. Export grades directly to your LMS or gradebook.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Features That Make Grading Effortless</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Rubric-Based Grading</h3>
+                        <p>Create custom rubrics that align with your teaching standards. Chrono grades consistently according to your specific criteria every time.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Customizable Criteria</h3>
+                        <p>Adjust grading parameters for different assignment types. Set weightings, focus areas, and evaluation standards that match your curriculum.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Detailed Feedback</h3>
+                        <p>Generate constructive feedback suggestions that help students improve. Customize feedback tone and focus areas for different grade levels.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>LMS Integration</h3>
+                        <p>Seamlessly connect with Canvas, Blackboard, Google Classroom, and other popular learning management systems for streamlined workflows.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Plagiarism Detection</h3>
+                        <p>Built-in plagiarism checking ensures academic integrity while providing educators with confidence in student originality.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Track class performance, identify learning gaps, and monitor grading efficiency with comprehensive analytics and reporting tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audience">
+            <div class="container">
+                <h2 class="section-title">Built For Modern Education</h2>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h3>School Administrators</h3>
+                        <p>Reduce teacher workload and improve consistency across departments while maintaining high academic standards.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Teachers & Educators</h3>
+                        <p>Reclaim hours of your week with AI-powered grading that maintains the quality and personalization students deserve.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>EdTech Platforms</h3>
+                        <p>Integrate Chrono's grading capabilities into your existing platform via our comprehensive API and developer tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Trusted By Educators Worldwide</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Chrono has transformed how I approach grading. What used to take me 4 hours now takes 30 minutes, and the feedback quality has actually improved. My students are getting more detailed, consistent feedback than ever before."</p>
+                        <div class="testimonial-author">Sarah Chen</div>
+                        <div class="testimonial-role">High School English Teacher, Lincoln Academy</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"The rubric-based grading feature ensures consistency across our entire department. Teachers love the time savings, and students appreciate the detailed feedback. It's been a game-changer for our district."</p>
+                        <div class="testimonial-author">Michael Rodriguez</div>
+                        <div class="testimonial-role">Curriculum Director, Springfield Public Schools</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Integration with our LMS was seamless. The analytics help us identify students who need extra support much earlier than before. The ROI has been incredible both in time and learning outcomes."</p>
+                        <div class="testimonial-author">Dr. Amanda Foster</div>
+                        <div class="testimonial-role">EdTech Coordinator, Valley College</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="demo">
+            <div class="container">
+                <h2>Ready to Transform Your Grading?</h2>
+                <p>Join thousands of educators who are already saving hours every week with Chrono's AI-powered grading platform.</p>
+                <a href="#contact" class="btn-white">Book Your Demo Today</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chrono. All rights reserved. | Privacy Policy | Terms of Service | Contact Us</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple fade-in animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all major sections
+        document.querySelectorAll('.step, .feature, .audience-card, .testimonial').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
