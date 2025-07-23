@@ -1072,11 +1072,15 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">SnapGrade</a>
+                <a href="#" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiNmOWZhZmIiLz4KPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHJ4PSIxNSIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjQiLz4KPHBhdGggZD0iTTMwIDUwTDQyIDYyTDcwIDM0IiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjx0ZXh0IHg9IjEyMCIgeT0iNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0OCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAwMDAiPlNuYXBHcmFkZTwvdGV4dD4KPC9zdmc+" alt="SnapGrade Logo" style="height: 40px; margin-right: 12px;">
+                    <span style="font-size: 28px; font-weight: 700; color: var(--text-primary);">SnapGrade</span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How it Works</a></li>
                     <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="https://www.notion.so/SnapGrade-for-Schools-and-Districts-239047cb6bff803a9967f3b8579c2c2a?source=copy_link" target="_blank">Docs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -1089,6 +1093,7 @@
                     <a href="#features">Features</a>
                     <a href="#how-it-works">How it Works</a>
                     <a href="#pricing">Pricing</a>
+                    <a href="https://www.notion.so/SnapGrade-for-Schools-and-Districts-239047cb6bff803a9967f3b8579c2c2a?source=copy_link" target="_blank">Docs</a>
                     <a href="#contact">Contact</a>
                     <a href="https://calendly.com/tejashgupta/30min?month=2025-07">Book a Demo</a>
                 </div>
@@ -1109,19 +1114,19 @@
                 <!-- Stats Section -->
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-number">50,000+</div>
-                        <div class="stat-label">Teachers Using SnapGrade</div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Rubrics</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">2M+</div>
-                        <div class="stat-label">Assignments Graded</div>
+                        <div class="stat-label">Assignments Worked On</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">98%</div>
+                        <div class="stat-number">97%</div>
                         <div class="stat-label">Accuracy Rate</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">5 hrs</div>
+                        <div class="stat-number">10-15 hrs</div>
                         <div class="stat-label">Average Time Saved/Week</div>
                     </div>
                 </div>
@@ -1162,84 +1167,106 @@
         <section class="pricing" id="pricing">
             <div class="container">
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Whether you're using SnapGrade for meetings, homework, grading, or just curious, it's fully free to start.</p>
+                <p class="section-subtitle">Choose the plan that fits your needs. Save teachers 5–10 hours per week while improving grading equity and reducing burnout.</p>
+                
+                <!-- Pricing Toggle -->
+                <div class="pricing-toggle" style="text-align: center; margin-bottom: 40px;">
+                    <div style="display: inline-flex; background: #f3f4f6; border-radius: 8px; padding: 4px; margin-bottom: 20px;">
+                        <button id="monthly-btn" class="toggle-btn active" style="padding: 8px 20px; border: none; background: #3b82f6; color: white; border-radius: 6px; cursor: pointer; font-weight: 500; transition: all 0.3s;">Monthly</button>
+                        <button id="yearly-btn" class="toggle-btn" style="padding: 8px 20px; border: none; background: transparent; color: #6b7280; border-radius: 6px; cursor: pointer; font-weight: 500; transition: all 0.3s;">Yearly</button>
+                    </div>
+                    <div style="color: #10b981; font-size: 14px; font-weight: 500;">💰 Save 20% with yearly billing</div>
+                </div>
                 
                 <div class="pricing-grid">
-                    <!-- Free Plan -->
+                    <!-- Teacher Plan -->
                     <div class="pricing-card">
-                        <div class="plan-name">Free Plan</div>
-                        <div class="plan-description">Perfect for individual teachers getting started</div>
+                        <div class="plan-name">Teacher Plan</div>
+                        <div class="plan-description">Perfect for individual teachers</div>
                         <div class="plan-price">
-                            <span class="currency">$</span>0
-                            <span class="period">/month</span>
+                            <span class="currency">$</span><span class="price-amount" data-monthly="19" data-yearly="199">19</span>
+                            <span class="period" data-monthly="/month" data-yearly="/year">/month</span>
                         </div>
-                        <div class="plan-billing">No credit card required</div>
+                        <div class="plan-billing" data-monthly="Billed monthly" data-yearly="Billed annually ($199/year)">Billed monthly</div>
                         
                         <ul class="plan-features">
-                            <li>Custom grading rubrics</li>
-                            <li>Limited AI responses per day</li>
-                            <li>Limited token usage</li>
-                            <li>GPT-4.1-mini model</li>
-                            <li>AI chat with assignment summaries</li>
+                            <li>Unlimited grading and submissions</li>
+                            <li>Advanced feedback tools</li>
+                            <li>Custom rubric support</li>
+                            <li>FERPA-ready & privacy protected</li>
                             <li>Email support</li>
-                            <li class="unavailable">Team-wide knowledge base</li>
-                            <li class="unavailable">Post-grading AI coaching insights</li>
-                            <li class="unavailable">Priority support</li>
+                            <li class="unavailable">LMS integrations</li>
+                            <li class="unavailable">Analytics dashboard</li>
                         </ul>
                         
-                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta secondary">Get Started Free</a>
+                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta secondary">Get Started</a>
                     </div>
                     
-                    <!-- Pro Plan -->
+                    <!-- School Plan -->
                     <div class="pricing-card featured">
-                        <div class="plan-name">Pro Plan</div>
-                        <div class="plan-description">For professional educators and small teams</div>
+                        <div class="plan-name">School Plan</div>
+                        <div class="plan-description">For entire schools and departments</div>
                         <div class="plan-price">
-                            <span class="currency">$</span>29
-                            <span class="period">/month</span>
+                            <span class="currency">$</span><span class="price-amount" data-monthly="499" data-yearly="4999">499</span>
+                            <span class="period" data-monthly="/month" data-yearly="/year">/month</span>
                         </div>
-                        <div class="plan-billing">Billed monthly or annually</div>
+                        <div class="plan-billing" data-monthly="Billed monthly" data-yearly="Billed annually ($4,999/year)">Billed monthly</div>
                         
                         <ul class="plan-features">
-                            <li>Custom grading rubrics</li>
-                            <li>Unlimited AI responses per day</li>
-                            <li>Unlimited token usage</li>
-                            <li>GPT-4.1 & Claude 4 Sonnet models</li>
-                            <li>AI chat with assignment summaries</li>
-                            <li>Priority email & chat support</li>
+                            <li>All teachers covered</li>
+                            <li>Unlimited grading and submissions</li>
+                            <li>LMS integrations (Google Classroom, Canvas, etc.)</li>
                             <li>Advanced analytics dashboard</li>
-                            <li>LMS integrations</li>
-                            <li class="unavailable">Team-wide knowledge base</li>
-                            <li class="unavailable">Post-grading AI coaching insights</li>
+                            <li>Custom rubric support</li>
+                            <li>FERPA-ready & privacy protected</li>
+                            <li>Priority support</li>
+                            <li>Improve rubric alignment and equity</li>
                         </ul>
                         
-                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta primary">Start Pro Trial</a>
+                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta primary">Contact Sales</a>
                     </div>
                     
-                    <!-- Enterprise Plan -->
+                    <!-- District Plan -->
                     <div class="pricing-card">
-                        <div class="plan-name">Enterprise Plan</div>
-                        <div class="plan-description">For schools, districts, and large organizations</div>
+                        <div class="plan-name">District Plan</div>
+                        <div class="plan-description">For districts and large organizations</div>
                         <div class="plan-price">
                             Custom
                             <span class="period">pricing</span>
                         </div>
-                        <div class="plan-billing">Contact us for a quote</div>
+                        <div class="plan-billing">Starting at $20k+ annually</div>
                         
                         <ul class="plan-features">
-                            <li>Everything in Pro Plan</li>
-                            <li>Team-wide knowledge base</li>
-                            <li>Post-grading AI coaching insights</li>
-                            <li>Centralized team billing</li>
-                            <li>Advanced data privacy & security</li>
-                            <li>Custom onboarding & training</li>
-                            <li>Dedicated account manager</li>
-                            <li>SSO integration</li>
+                            <li>Multi-school deployment</li>
+                            <li>Advanced analytics & reporting</li>
                             <li>Custom integrations</li>
+                            <li>Dedicated account manager</li>
+                            <li>Custom onboarding & training</li>
+                            <li>Volume discounts available</li>
+                            <li>SSO integration</li>
                             <li>24/7 priority support</li>
                         </ul>
                         
                         <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta secondary">Contact Sales</a>
+                    </div>
+                </div>
+                
+                <!-- Optional Add-ons -->
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3 style="color: #1f2937; margin-bottom: 30px;">Optional Add-ons</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
+                        <div style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                            <strong>LMS Integrations</strong><br>
+                            <span style="color: #6b7280;">+$500/site</span>
+                        </div>
+                        <div style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                            <strong>Custom Rubric Support</strong><br>
+                            <span style="color: #6b7280;">+$1,000/district</span>
+                        </div>
+                        <div style="padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f9fafb;">
+                            <strong>Data Dashboard Access</strong><br>
+                            <span style="color: #6b7280;">+$1,000/year</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1320,28 +1347,7 @@
             </div>
         </section>
 
-        <section class="testimonials">
-            <div class="container">
-                <h2 class="section-title">Trusted By Educators Worldwide</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial">
-                        <p class="testimonial-quote">"SnapGrade has transformed how I approach grading. What used to take me 4 hours now takes 30 minutes, and the feedback quality has actually improved. My students are getting more detailed, consistent feedback than ever before."</p>
-                        <div class="testimonial-author">Sarah Chen</div>
-                        <div class="testimonial-role">High School English Teacher, Lincoln Academy</div>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-quote">"The rubric-based grading feature ensures consistency across our entire department. Teachers love the time savings, and students appreciate the detailed feedback. It's been a game-changer for our district."</p>
-                        <div class="testimonial-author">Michael Rodriguez</div>
-                        <div class="testimonial-role">Curriculum Director, Springfield Public Schools</div>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-quote">"Integration with our LMS was seamless. The analytics help us identify students who need extra support much earlier than before. The ROI has been incredible both in time and learning outcomes."</p>
-                        <div class="testimonial-author">Dr. Amanda Foster</div>
-                        <div class="testimonial-role">EdTech Coordinator, Valley College</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Testimonials section removed -->
 
         <!-- Contact Section -->
         <section class="contact" id="contact">
@@ -1365,7 +1371,7 @@
 
     <footer>
         <div class="container">
-            <p><a href="mailto:tgupta9@wharton.upenn.edu" style="color: var(--text-muted); text-decoration: none;">Contact Us</a> | Privacy Policy | Terms of Service</p>
+            <p><a href="mailto:tgupta9@wharton.upenn.edu" style="color: var(--text-muted); text-decoration: none;">Contact Us</a> | <a href="https://www.notion.so/SnapGrade-Privacy-Policy-239047cb6bff806eb1d8e52abacf4af6?source=copy_link" target="_blank" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a> | <a href="https://www.notion.so/SnapGrade-Terms-of-Service-239047cb6bff809495dff2d52a3de33d?source=copy_link" target="_blank" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a></p>
         </div>
     </footer>
 
@@ -1392,6 +1398,57 @@
                 contactLink.addEventListener('click', function(e) {
                     e.preventDefault();
                     window.location.href = 'mailto:tgupta9@wharton.upenn.edu?subject=SnapGrade%20Inquiry&body=Hello,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20SnapGrade.%0A%0AThank%20you.';
+                });
+            }
+            
+            // Pricing toggle functionality (FIXED - removed duplicate)
+            const monthlyBtn = document.getElementById('monthly-btn');
+            const yearlyBtn = document.getElementById('yearly-btn');
+            const priceAmounts = document.querySelectorAll('.price-amount');
+            const periods = document.querySelectorAll('.period');
+            const billings = document.querySelectorAll('.plan-billing');
+            
+            function updatePricing(isYearly) {
+                priceAmounts.forEach(amount => {
+                    const monthlyPrice = amount.getAttribute('data-monthly');
+                    const yearlyPrice = amount.getAttribute('data-yearly');
+                    if (monthlyPrice && yearlyPrice) {
+                        amount.textContent = isYearly ? yearlyPrice : monthlyPrice;
+                    }
+                });
+                
+                periods.forEach(period => {
+                    const monthlyPeriod = period.getAttribute('data-monthly');
+                    const yearlyPeriod = period.getAttribute('data-yearly');
+                    if (monthlyPeriod && yearlyPeriod) {
+                        period.textContent = isYearly ? yearlyPeriod : monthlyPeriod;
+                    }
+                });
+                
+                billings.forEach(billing => {
+                    const monthlyBilling = billing.getAttribute('data-monthly');
+                    const yearlyBilling = billing.getAttribute('data-yearly');
+                    if (monthlyBilling && yearlyBilling) {
+                        billing.textContent = isYearly ? yearlyBilling : monthlyBilling;
+                    }
+                });
+            }
+            
+            if (monthlyBtn && yearlyBtn) {
+                monthlyBtn.addEventListener('click', function() {
+                    monthlyBtn.style.background = '#3b82f6';
+                    monthlyBtn.style.color = 'white';
+                    yearlyBtn.style.background = 'transparent';
+                    yearlyBtn.style.color = '#6b7280';
+                    updatePricing(false);
+                });
+                
+                yearlyBtn.addEventListener('click', function() {
+                    yearlyBtn.style.background = '#3b82f6';
+                    yearlyBtn.style.color = 'white';
+                    monthlyBtn.style.background = 'transparent';
+                    monthlyBtn.style.color = '#6b7280';
+                    updatePricing(true);
                 });
             }
         });
@@ -1437,25 +1494,25 @@
             observer.observe(el);
         });
 
-        // Counter animation for stats - Fixed version
+        // Counter animation for stats - Updated version
         const animateCounter = (element) => {
             const originalText = element.textContent.trim();
             let targetNumber;
             let suffix = '';
             
             // Parse the target number and suffix
-            if (originalText.includes('50,000+')) {
-                targetNumber = 50000;
+            if (originalText.includes('50+')) {
+                targetNumber = 50;
                 suffix = '+';
             } else if (originalText.includes('2M+')) {
                 targetNumber = 2;
                 suffix = 'M+';
-            } else if (originalText.includes('98%')) {
-                targetNumber = 98;
+            } else if (originalText.includes('97%')) {
+                targetNumber = 97;
                 suffix = '%';
-            } else if (originalText.includes('5 hrs')) {
-                targetNumber = 5;
-                suffix = ' hrs';
+            } else if (originalText.includes('10-15 hrs')) {
+                // No animation for range-based stat
+                return;
             } else {
                 return; // Skip if format not recognized
             }
@@ -1501,26 +1558,7 @@
             statsObserver.observe(heroStats);
         }
 
-        // Add subtle parallax effect to hero background (reduced to prevent overlapping)
-        let ticking = false;
-        
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            
-            if (parallax && scrolled < window.innerHeight) {
-                const speed = scrolled * 0.2; // Reduced from 0.5 to prevent overlapping
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-            ticking = false;
-        }
-        
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        });
+        // Parallax effect removed to prevent layout issues
     </script>
 </body>
 </html>
