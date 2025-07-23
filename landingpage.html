@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrono - AI-Powered Assignment Grading Platform</title>
+    <title>SnapGrade - AI-Powered Assignment Grading Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,30 +15,30 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             line-height: 1.6;
-            color: #e2e8f0;
-            background-color: #0f172a;
+            color: #1a202c;
+            background-color: #ffffff;
         }
         
         :root {
-            --primary-color: #0f172a;
+            --primary-color: #ffffff;
             --secondary-color: #3b82f6;
             --accent-color: #10b981;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --border-color: #334155;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-            --gradient-hero: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #edf2f7;
+            --border-color: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            --gradient-hero: linear-gradient(135deg, #f7fafc 0%, #ffffff 100%);
+            --gradient-dark: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         .container {
@@ -51,7 +51,6 @@
             padding: 20px 0;
             border-bottom: 1px solid var(--border-color);
             background-color: var(--bg-primary);
-            backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -154,17 +153,17 @@
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-primary);
             color: white;
-            padding: 16px 32px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 12px;
-            font-weight: 700;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
             position: relative;
             overflow: hidden;
         }
@@ -192,14 +191,13 @@
         .btn-secondary {
             background-color: transparent;
             color: var(--text-primary);
-            padding: 16px 32px;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            font-weight: 700;
+            padding: 12px 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
@@ -211,9 +209,9 @@
         }
         
         .hero {
-            padding: 120px 0;
+            padding: 100px 0;
             text-align: center;
-            background: var(--gradient-dark);
+            background: var(--gradient-hero);
             color: var(--text-primary);
             position: relative;
             overflow: hidden;
@@ -226,7 +224,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%236366f1" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%233b82f6" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
             opacity: 0.3;
         }
         
@@ -237,7 +235,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
         }
         
         .hero .container {
@@ -246,20 +244,17 @@
         }
         
         .hero h1 {
-            font-size: 64px;
+            font-size: 48px;
             font-weight: 800;
-            margin-bottom: 32px;
-            line-height: 1.1;
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            color: var(--text-primary);
             animation: fadeInUp 1s ease-out;
         }
         
         .hero p {
-            font-size: 22px;
-            margin-bottom: 48px;
+            font-size: 20px;
+            margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -268,8 +263,12 @@
         }
         
         .hero-cta {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             animation: fadeInUp 1s ease-out 0.4s both;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
         }
         
         .hero-stats {
@@ -299,6 +298,170 @@
             font-size: 16px;
             color: var(--text-muted);
             font-weight: 500;
+        }
+        
+        /* Pricing Section Styles */
+        .pricing {
+            padding: 140px 0 100px 0;
+            background: var(--bg-primary);
+        }
+        
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-color);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(59, 130, 246, 0.05) 100%);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        
+        .plan-description {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        
+        .plan-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        
+        .plan-price .currency {
+            font-size: 24px;
+            vertical-align: top;
+        }
+        
+        .plan-price .period {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .plan-billing {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 32px;
+        }
+        
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .plan-features li.unavailable {
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        
+        .plan-features li.unavailable::before {
+            content: '✗';
+            color: #ef4444;
+        }
+        
+        .plan-cta {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .plan-cta.primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .plan-cta.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+        
+        .plan-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
         
         @keyframes fadeInUp {
@@ -419,18 +582,6 @@
         .how-it-works {
             padding: 100px 0;
             background-color: var(--bg-secondary);
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 80px;
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
         }
         
         .section-title::after {
@@ -679,6 +830,45 @@
             margin-top: 4px;
         }
         
+        /* Contact Section Styles */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--bg-secondary);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-content p {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .contact-email {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
         .final-cta {
             padding: 120px 0;
             background: var(--gradient-primary);
@@ -695,8 +885,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><path d="M20 20c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-30 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z"/></g></svg>') repeat;
-            opacity: 0.1;
+            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="20" cy="20" r="1"/></g></svg>') repeat;
         }
         
         .final-cta .container {
@@ -706,22 +895,23 @@
         
         .final-cta h2 {
             font-size: 48px;
-            margin-bottom: 24px;
             font-weight: 800;
+            margin-bottom: 24px;
+            color: white;
         }
         
         .final-cta p {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 48px;
-            opacity: 0.95;
+            opacity: 0.9;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .btn-white {
-            background-color: white;
-            color: var(--bg-primary);
+            background-color: #1e293b;
+            color: white;
             padding: 20px 40px;
             border: none;
             border-radius: 12px;
@@ -734,18 +924,24 @@
         }
         
         .btn-white:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-xl);
+            background-color: #334155;
         }
         
         footer {
+            background-color: var(--bg-secondary);
             padding: 40px 0;
-            border-top: 1px solid var(--border-color);
             text-align: center;
-            color: var(--text-muted);
-            background-color: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
         }
         
+        footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -755,42 +951,28 @@
                 display: flex;
             }
             
-            nav {
-                position: relative;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
             .hero h1 {
-                font-size: 42px;
-                margin-bottom: 24px;
+                font-size: 48px;
             }
             
             .hero p {
-                font-size: 20px;
-                margin-bottom: 40px;
+                font-size: 18px;
             }
             
             .section-title {
                 font-size: 36px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+                max-width: 100%;
+                padding: 0 16px;
                 margin-bottom: 60px;
-            }
-            
-            .dashboard-mockup {
-                padding: 20px;
-                margin: 0 10px;
-            }
-            
-            .dashboard-content {
-                padding: 24px;
             }
             
             .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-                margin-bottom: 60px;
+                gap: 20px;
             }
             
             .stat-number {
@@ -874,6 +1056,15 @@
             .container {
                 padding: 0 16px;
             }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .pricing-card {
+                padding: 30px 24px;
+            }
         }
     </style>
 </head>
@@ -881,7 +1072,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Chrono</a>
+                <a href="#" class="logo">SnapGrade</a>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How it Works</a></li>
@@ -893,13 +1084,13 @@
                     <span></span>
                     <span></span>
                 </div>
-                <a href="#demo" class="btn-primary">Book a Demo</a>
+                <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="btn-primary">Book a Demo</a>
                 <div class="mobile-menu" id="mobileMenu">
                     <a href="#features">Features</a>
                     <a href="#how-it-works">How it Works</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
-                    <a href="#demo">Book a Demo</a>
+                    <a href="https://calendly.com/tejashgupta/30min?month=2025-07">Book a Demo</a>
                 </div>
             </nav>
         </div>
@@ -909,9 +1100,9 @@
         <section class="hero">
             <div class="container">
                 <h1>AI-Powered Grading That Saves Teachers Hours Every Week</h1>
-                <p>Chrono uses advanced AI to grade essays, problem sets, and assignments with precision, giving teachers more time to focus on what matters most: teaching.</p>
+                <p>SnapGrade uses advanced AI to grade essays, problem sets, and assignments with precision, giving teachers more time to focus on what matters most: teaching.</p>
                 <div class="hero-cta">
-                    <a href="#demo" class="btn-primary" style="margin-right: 20px;">Book a Demo</a>
+                    <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="btn-primary">Book a Demo</a>
                     <a href="#how-it-works" class="btn-secondary">Learn More</a>
                 </div>
                 
@@ -919,7 +1110,7 @@
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">50,000+</div>
-                        <div class="stat-label">Teachers Using Chrono</div>
+                        <div class="stat-label">Teachers Using SnapGrade</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">2M+</div>
@@ -967,14 +1158,101 @@
             </div>
         </section>
 
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Whether you're using SnapGrade for meetings, homework, grading, or just curious, it's fully free to start.</p>
+                
+                <div class="pricing-grid">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-name">Free Plan</div>
+                        <div class="plan-description">Perfect for individual teachers getting started</div>
+                        <div class="plan-price">
+                            <span class="currency">$</span>0
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="plan-billing">No credit card required</div>
+                        
+                        <ul class="plan-features">
+                            <li>Custom grading rubrics</li>
+                            <li>Limited AI responses per day</li>
+                            <li>Limited token usage</li>
+                            <li>GPT-4.1-mini model</li>
+                            <li>AI chat with assignment summaries</li>
+                            <li>Email support</li>
+                            <li class="unavailable">Team-wide knowledge base</li>
+                            <li class="unavailable">Post-grading AI coaching insights</li>
+                            <li class="unavailable">Priority support</li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta secondary">Get Started Free</a>
+                    </div>
+                    
+                    <!-- Pro Plan -->
+                    <div class="pricing-card featured">
+                        <div class="plan-name">Pro Plan</div>
+                        <div class="plan-description">For professional educators and small teams</div>
+                        <div class="plan-price">
+                            <span class="currency">$</span>29
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="plan-billing">Billed monthly or annually</div>
+                        
+                        <ul class="plan-features">
+                            <li>Custom grading rubrics</li>
+                            <li>Unlimited AI responses per day</li>
+                            <li>Unlimited token usage</li>
+                            <li>GPT-4.1 & Claude 4 Sonnet models</li>
+                            <li>AI chat with assignment summaries</li>
+                            <li>Priority email & chat support</li>
+                            <li>Advanced analytics dashboard</li>
+                            <li>LMS integrations</li>
+                            <li class="unavailable">Team-wide knowledge base</li>
+                            <li class="unavailable">Post-grading AI coaching insights</li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta primary">Start Pro Trial</a>
+                    </div>
+                    
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card">
+                        <div class="plan-name">Enterprise Plan</div>
+                        <div class="plan-description">For schools, districts, and large organizations</div>
+                        <div class="plan-price">
+                            Custom
+                            <span class="period">pricing</span>
+                        </div>
+                        <div class="plan-billing">Contact us for a quote</div>
+                        
+                        <ul class="plan-features">
+                            <li>Everything in Pro Plan</li>
+                            <li>Team-wide knowledge base</li>
+                            <li>Post-grading AI coaching insights</li>
+                            <li>Centralized team billing</li>
+                            <li>Advanced data privacy & security</li>
+                            <li>Custom onboarding & training</li>
+                            <li>Dedicated account manager</li>
+                            <li>SSO integration</li>
+                            <li>Custom integrations</li>
+                            <li>24/7 priority support</li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="plan-cta secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="how-it-works" id="how-it-works">
             <div class="container">
-                <h2 class="section-title">How Chrono Works</h2>
+                <h2 class="section-title">How SnapGrade Works</h2>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Upload Assignments</h3>
-                        <p>Simply upload student assignments in any format. Chrono supports essays, problem sets, code submissions, and more.</p>
+                        <p>Simply upload student assignments in any format. SnapGrade supports essays, problem sets, code submissions, and more.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
@@ -992,31 +1270,31 @@
 
         <section class="features" id="features">
             <div class="container">
-                <h2 class="section-title">Features That Make Grading Effortless</h2>
+                <h2 class="section-title">Solve Any Grading Challenge with AI</h2>
                 <div class="features-grid">
                     <div class="feature">
-                        <h3>Rubric-Based Grading</h3>
-                        <p>Create custom rubrics that align with your teaching standards. Chrono grades consistently according to your specific criteria every time.</p>
+                        <h3>Universal Problem Solving</h3>
+                        <p>From complex math equations to creative writing, SnapGrade's AI adapts to grade any subject or assignment type with precision and consistency.</p>
                     </div>
                     <div class="feature">
-                        <h3>Customizable Criteria</h3>
-                        <p>Adjust grading parameters for different assignment types. Set weightings, focus areas, and evaluation standards that match your curriculum.</p>
+                        <h3>Customizable for Every Challenge</h3>
+                        <p>No matter how unique your grading requirements, adjust parameters and criteria to solve specific educational challenges across all disciplines.</p>
                     </div>
                     <div class="feature">
-                        <h3>Detailed Feedback</h3>
-                        <p>Generate constructive feedback suggestions that help students improve. Customize feedback tone and focus areas for different grade levels.</p>
+                        <h3>Intelligent Feedback Solutions</h3>
+                        <p>Generate targeted feedback that addresses individual student problems and learning gaps, helping solve comprehension issues before they become barriers.</p>
                     </div>
                     <div class="feature">
-                        <h3>LMS Integration</h3>
-                        <p>Seamlessly connect with Canvas, Blackboard, Google Classroom, and other popular learning management systems for streamlined workflows.</p>
+                        <h3>Seamless Integration Solutions</h3>
+                        <p>Solve workflow problems by connecting with Canvas, Blackboard, Google Classroom, and other LMS platforms for effortless grade management.</p>
                     </div>
                     <div class="feature">
-                        <h3>Plagiarism Detection</h3>
-                        <p>Built-in plagiarism checking ensures academic integrity while providing educators with confidence in student originality.</p>
+                        <h3>Academic Integrity Solutions</h3>
+                        <p>Built-in plagiarism detection solves originality concerns while maintaining academic standards and ensuring authentic student work.</p>
                     </div>
                     <div class="feature">
-                        <h3>Analytics Dashboard</h3>
-                        <p>Track class performance, identify learning gaps, and monitor grading efficiency with comprehensive analytics and reporting tools.</p>
+                        <h3>Performance Analytics Solutions</h3>
+                        <p>Identify and solve learning challenges early with comprehensive analytics that reveal class trends and individual student needs.</p>
                     </div>
                 </div>
             </div>
@@ -1036,7 +1314,7 @@
                     </div>
                     <div class="audience-card">
                         <h3>EdTech Platforms</h3>
-                        <p>Integrate Chrono's grading capabilities into your existing platform via our comprehensive API and developer tools.</p>
+                        <p>Integrate SnapGrade's grading capabilities into your existing platform via our comprehensive API and developer tools.</p>
                     </div>
                 </div>
             </div>
@@ -1047,7 +1325,7 @@
                 <h2 class="section-title">Trusted By Educators Worldwide</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial">
-                        <p class="testimonial-quote">"Chrono has transformed how I approach grading. What used to take me 4 hours now takes 30 minutes, and the feedback quality has actually improved. My students are getting more detailed, consistent feedback than ever before."</p>
+                        <p class="testimonial-quote">"SnapGrade has transformed how I approach grading. What used to take me 4 hours now takes 30 minutes, and the feedback quality has actually improved. My students are getting more detailed, consistent feedback than ever before."</p>
                         <div class="testimonial-author">Sarah Chen</div>
                         <div class="testimonial-role">High School English Teacher, Lincoln Academy</div>
                     </div>
@@ -1065,18 +1343,29 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-content">
+                    <p>Have questions about SnapGrade or want to learn more about how our AI-powered grading platform can help your institution? Reach out to our team directly.</p>
+                    <a href="mailto:tgupta9@wharton.upenn.edu" class="contact-email">Email Us</a>
+                </div>
+            </div>
+        </section>
+
         <section class="final-cta" id="demo">
             <div class="container">
                 <h2>Ready to Transform Your Grading?</h2>
-                <p>Join thousands of educators who are already saving hours every week with Chrono's AI-powered grading platform.</p>
-                <a href="#contact" class="btn-white">Book Your Demo Today</a>
+                <p>Join thousands of educators who are already saving hours every week with SnapGrade's AI-powered grading platform.</p>
+                <a href="https://calendly.com/tejashgupta/30min?month=2025-07" class="btn-white">Book Your Demo Today</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Chrono. All rights reserved. | Privacy Policy | Terms of Service | Contact Us</p>
+            <p><a href="mailto:tgupta9@wharton.upenn.edu" style="color: var(--text-muted); text-decoration: none;">Contact Us</a> | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -1093,6 +1382,17 @@
         document.addEventListener('click', (e) => {
             if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Add email functionality for contact link
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLink = document.querySelector('.nav-links a[href="#contact"]');
+            if (contactLink) {
+                contactLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'mailto:tgupta9@wharton.upenn.edu?subject=SnapGrade%20Inquiry&body=Hello,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20SnapGrade.%0A%0AThank%20you.';
+                });
             }
         });
 
@@ -1130,7 +1430,7 @@
         }, observerOptions);
 
         // Observe all animated elements
-        document.querySelectorAll('.step, .feature, .audience-card, .testimonial').forEach(el => {
+        document.querySelectorAll('.step, .feature, .audience-card, .testimonial, .pricing-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
